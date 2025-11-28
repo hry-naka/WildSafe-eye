@@ -1,0 +1,35 @@
+@startuml
+title 警告ロジックフロー
+
+start
+:識別器出力取得;
+
+if (信頼度 >= 閾値?) then (Yes)
+  if (距離 <= 100m?) then (Yes)
+    :警告イベント確定;
+  else (No)
+    if (連続検出あり?) then (Yes)
+      :警告イベント確定;
+    else (No)
+      :待機;
+    endif
+  endif
+else (No)
+  :待機;
+endif
+
+:ラベル判定;
+if (条件A) then (Yes)
+  :段階1:低周波;
+elseif (条件B) then (Yes)
+  :段階2:低周波+弱光;
+elseif (条件C) then (Yes)
+  :段階3:低周波+強光;
+endif
+
+:ヒステリシス制御;
+:上昇=即時反映;
+:下降=遅延反映;
+
+stop
+@enduml

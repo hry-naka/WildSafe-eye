@@ -1,0 +1,38 @@
+@startuml
+title WildSafe Eye システム構成（PoC基本設計）
+
+package "Edge デバイス" {
+  [カメラ] as CAM
+  [音響センサー] as MIC
+  component "推論モジュール" as INFER
+  component "イベント判定" as EVENT
+  component "ヒステリシス制御" as HYS
+  component "アラート制御" as ALERT
+  database "ローカルログ" as LOG
+  node "保守用sshd" as SSHD
+
+  [低周波音発生デバイス] as SOUND
+  [発光デバイス] as LIGHT
+}
+
+package "外部" {
+  [通知(Email)] as EMAIL
+}
+
+CAM --> INFER
+MIC --> INFER
+INFER --> EVENT
+EVENT --> HYS
+HYS --> ALERT
+ALERT --> SOUND
+ALERT --> LIGHT
+ALERT --> EMAIL
+EVENT --> LOG
+
+SSHD ..> LOG : ローカルログ参照
+note right of SSHD
+保守・デバッグ用:
+- 鍵認証のみ
+- ポート制限
+end note
+@enduml

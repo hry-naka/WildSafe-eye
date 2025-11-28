@@ -1,0 +1,17 @@
+# APIキーなど秘匿情報
+.env
+
+# 再生成可能な成果物
+checklist.csv
+labels.csv
+
+# バックアップや古いスクリプト
+old-raw/
+old-scripts/
+
+# 人力チェックで除外した画像の退避先
+not-good_archive/
+
+# 大容量の生データとリサイズ済み画像
+raw/
+resized/

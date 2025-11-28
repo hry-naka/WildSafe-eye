@@ -1,0 +1,30 @@
+# Core libraries
+python-dotenv
+pandas
+numpy
+
+# Computer Vision
+opencv-python
+Pillow
+imagehash
+
+# Deep Learning (YOLOv8)
+ultralytics   # YOLOv8 framework
+torch         # PyTorch
+torchvision   # PyTorch vision utilities
+
+# OCR
+pytesseract   # Python wrapper for Tesseract OCR
+easyocr       # Alternative OCR engine
+
+# Utilities
+tqdm          # Progress bar
+ffmpeg-python # FFmpeg wrapper
+requests      # HTTP requests for APIs
+
+# Evaluation / Visualization
+scikit-learn  # Confusion matrix, metrics
+matplotlib    # Plotting confusion matrix and charts
+
+# YOLOv8n
+ultralytics
