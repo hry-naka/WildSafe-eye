@@ -28,3 +28,6 @@ matplotlib    # Plotting confusion matrix and charts
 
 # YOLOv8n
 ultralytics
+
+# Openimage douwloader
+fiftyone
